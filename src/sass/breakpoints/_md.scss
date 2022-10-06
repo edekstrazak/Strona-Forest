@@ -1,0 +1,218 @@
+@media (min-width: 768px) {
+	.nav-mobile {
+		display: none;
+	}
+
+	.nav-desktop {
+		display: block;
+	}
+
+	.header {
+		width: 100%;
+		height: 100%;
+		top: 12vh;
+		height: 60vh;
+
+		&__bg {
+			background-position: bottom;
+		}
+
+		&__content {
+			&-company-name {
+				font-size: 3rem;
+			}
+			&-heading {
+				font-size: 3.8rem;
+			}
+		}
+	}
+
+	.section {
+		padding: 5rem 3.5rem;
+		&__heading {
+			font-size: 3.5rem;
+			margin: 0;
+		}
+	}
+
+	.main {
+		position: relative;
+		top: 12vh;
+
+		.about-us {
+			.wrapper {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 5vw;
+			}
+
+			.section__heading {
+				margin-bottom: 0;
+				width: 100%;
+			}
+
+			&__content {
+				display: flex;
+				flex-direction: column;
+				width: 50%;
+				text-align: left;
+
+				&-heading {
+					margin-top: 0;
+					font-size: 2.5rem;
+				}
+
+				&-text {
+					line-height: 3rem;
+					font-size: 2rem;
+				}
+			}
+
+			&__img {
+				align-self: center;
+				width: 40%;
+				height: 100%;
+			}
+		}
+
+		.banner {
+			height: 40vh;
+			background-position: center;
+			&__content {
+				&-text {
+					font-size: 4rem;
+				}
+			}
+		}
+
+		.offer {
+			&__info {
+				margin: 1.5em 0;
+			}
+		}
+
+		.contact {
+			&__map {
+				margin: 5em 0 6em;
+			}
+			&-form {
+
+				&__label {
+					font-size: 2.3rem;
+				}
+
+				&__input,
+				&__textarea {
+					font-size: 2.1rem;
+				}
+				&__textarea {
+					min-height: 30vh;
+					height: auto;
+					max-height: 60vh;
+				}
+
+				&__btn {
+					width: max-content;
+					margin: 2em 0 0 auto;
+					&:hover::after {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.footer {
+		position: relative;
+		top: 12vh;
+		padding: 5em 3em;
+
+		.wrapper {
+			display: flex;
+			width: 100%;
+		}
+
+		&__heading {
+			flex-grow: 4;
+			justify-self: start;
+			width: auto;
+			text-align: left;
+			font-size: 3.5rem;
+		}
+
+		&__box {
+			flex-grow: 1;
+			width: max-content;
+			justify-self: end;
+
+			&--third {
+				margin-top: 0;
+
+				.footer__box-title {
+					flex-grow: 0;
+				}
+
+				.footer__box-link {
+					justify-self: start;
+				}
+			}
+
+			&-link {
+				&::before {
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.nav-desktop {
+		&__heading {
+			font-size: 3.5rem;
+		}
+	}
+	.header {
+		&__bg {
+			background-image: url('/dist/img/pathway-big.jpg');
+		}
+	}
+
+	.section {
+		padding: 6em 4em;
+
+		&__heading {
+			margin-top: 0;
+		}
+	}
+
+	.main {
+		.banner {
+			background-image: url(../img/adventurer-big.jpg);
+			&__content {
+				&-text {
+					font-size: 4rem;
+				}
+			}
+		}
+		.offer {
+			.wrapper {
+				flex-direction: row;
+				gap: 3vw;
+			}
+			&-card {
+				width: max-content;
+				padding: 4em 2em;
+			}
+		}
+	}
+	
+	.footer {
+		
+		&__heading {
+			font-size: 4rem;
+		}
+	}
+}

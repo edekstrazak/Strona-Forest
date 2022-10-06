@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mateusz Tryc Dev.">
+    <meta name="keywords" content="piękne parki, piękne parki w okolicy, miejsca do spacerów">
+    <meta name="description" content="Grupa Forest zajmuje się floryzacją całej Polski. Stwarzamy projekty parków dla waszych miast.">
+    <title>Forest Group - piękne parki w twojej okolicy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/main-min.css">
+    <script src="https://kit.fontawesome.com/8c5da51161.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="nav-mobile">
+    <button class="hamburger">
+        <div class="hamburger__bg"></div>
+        <div class="hamburger__bars flex-center">
+            <div class="hamburger__bar"></div>
+        </div>
+    </button>
+    <button class="x-btn burger-inactive">
+        <div class="x-btn__bars">
+            <div class="x-btn__bar"></div>
+        </div>
+    </button>
+    <div class="nav-mobile__bg">
+        <div class="nav-mobile__bg-stripe">
+            <p class="nav-mobile__bg-heading"><i class="fa-solid fa-tree"></i>Forest</p>
+        </div>
+        <div class="nav-mobile__links">
+            <a href="/#" class="nav-mobile__link">Home</a>
+            <a href="/#abt-us" class="nav-mobile__link">O nas</a>
+            <a href="#offer" class="nav-mobile__link">Oferta</a>
+            <a href="/contact.html#contact" class="nav-mobile__link">Kontakt</a>
+        </div>
+        <div class="nav-mobile__bg-blur"></div>
+    </div>
+</nav>
+
+<nav class="nav-desktop">
+    <div class="wrapper">
+        <div class="nav-desktop__box">
+            <p class="nav-desktop__heading"><i class="fa-solid fa-tree"></i>Forest</p>
+            <a href="/#" class="nav-desktop__link">Home
+                <span class="nav-desktop__link--active">Home</span>
+            </a>
+            <a href="/#abt-us" class="nav-desktop__link">O nas
+                <span class="nav-desktop__link--active">O nas</span>
+            </a>
+            <a href="#offer" class="nav-desktop__link">Oferta
+                <span class="nav-desktop__link--active">Oferta</span>
+            </a>
+            <a href="/contact.html#contact" class="nav-desktop__link">Kontakt
+                <span class="nav-desktop__link--active">Kontakt</span>
+            </a>
+        </div>
+    </div>
+</nav>
+    <header class="header">
+    <div class="header__bg"></div>
+    <div class="header__shadow"></div>
+    <div class="header__content">
+        <div class="wrapper">
+            <p class="header__content-company-name">Forest Group</p>
+            <h1 class="header__content-heading">Najpiękniejszy park w Twojej okolicy!</h1>
+        </div>
+    </div>
+</header>
+    <main class="main">
+        <section class="section about-us" id="abt-us">
+            <div class="wrapper">
+                <h2 class="section__heading">o nas</h2>
+                <img class="about-us__img" src="./dist/img/waters-sm.jpg"
+                    alt="Wyeksponowana mała wysepka z wyrastającym z niej drzewem na środku jeziora w tle lasu.">
+                <div class="about-us__content">
+                    <h3 class="about-us__content-heading">Niezapomniane przygody</h3>
+                    <p class="about-us__content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+                        architecto fugit commodi iure saepe amet reprehenderit beatae. Doloribus quam ducimus iure quas
+                        eveniet
+                        dignissimos sunt, illum, excepturi, autem esse nemo!</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section banner">
+            <div class="banner__shadow"></div>
+            <div class="banner__content flex-center">
+                <p class="banner__content-text">Przygoda dla całej rodziny.</p>
+            </div>
+        </div>
+
+        <section class="section offer" id="offer">
+            <h2 class="section__heading">oferta</h2>
+            <p class="offer__info">Wybierz jedną z naszych wspaniałych ofert!</p>
+            <p class="offer__info">Znajdziesz je wszystkie klikając <a href="./offer.html" class="offer__info--hyperlink">tutaj!</a></p>
+        </section>
+    </main>
+    <footer class="footer">
+    <div class="wrapper">
+        <p class="footer__heading"><i class="fa-solid fa-tree"></i>Forest</p>
+        <div class="footer__box footer__box--first">
+            <p class="footer__box-title">O nas</p>
+            <a href="#" class="footer__box-link">Historia</a>
+            <a href="#" class="footer__box-link">Parki</a>
+            <a href="#" class="footer__box-link">Opinie</a>
+        </div>
+
+        <div class="footer__box footer__box--second">
+            <p class="footer__box-title">Nasza firma</p>
+            <a href="#" class="footer__box-link">Praca</a>
+            <a href="#" class="footer__box-link">Kadry</a>
+            <a href="#" class="footer__box-link">Zarząd</a>
+        </div>
+
+        <div class="footer__box footer__box--third">
+            <p class="footer__box-title">Dokumenty</p>
+            <a href="#" class="footer__box-link">Wnioski</a>
+            <a href="#" class="footer__box-link">Rekrutacje</a>
+        </div>
+
+
+    </div>
+    <div class="footer__line"></div>
+    <div class="footer__company">
+        <p class="footer__company-name">©<span class="footer__company-year">2021</span> Forest Group Company Ltd.</p>
+    </div>
+</footer>
+
+
+    <script src="/dist/js/main-min.js"></script>
+</body>
+
+</html>

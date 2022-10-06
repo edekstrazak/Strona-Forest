@@ -1,0 +1,82 @@
+@media (min-width: 1200px) {
+    .section {
+        &__heading {
+            font-size: 4rem;
+        }
+    }
+
+	.nav-desktop {
+		&__heading {
+			font-size: 3.8rem;
+		}
+
+        &__link {
+            font-size: 2.4rem;
+            &::after {
+                font-size: 2.4rem !important;
+            }
+        }
+	}
+
+    .header {
+		&__content {
+			&-company-name {
+				font-size: 4rem;
+			}
+			&-heading {
+				font-size: 4.5rem;
+			}
+		}
+	}
+
+    .main {
+
+		.about-us {
+            .section__heading {
+                margin-top: .5em;
+            }
+
+			&__content {
+				&-heading {
+					margin-top: 0;
+					font-size: 3rem;
+				}
+				
+				&-text {
+					line-height: 2em;
+					font-size: 2.5rem;
+				}
+			}
+
+			&__img {
+				align-self: center;
+				width: 40%;
+				height: 100%;
+			}
+		}
+
+		.contact {
+			&-form {
+
+				&__label {
+					font-size: 2.5rem;
+				}
+
+				&__input,
+				&__textarea {
+					font-size: 2.3rem;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	.main {
+		.offer {
+			&-card {
+				width: 30%;
+			}
+		}
+	}
+}

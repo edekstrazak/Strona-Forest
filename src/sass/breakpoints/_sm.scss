@@ -1,0 +1,108 @@
+@media (min-width: 320px) {
+	.section {
+		padding: 5rem 3rem;
+	}
+}
+
+@media (min-width: 576px) {
+	.section {
+		&__heading {
+			font-size: 2.7rem;
+		}
+	}
+
+	.header {
+		&__content {
+			&-company-name {
+				font-size: 2.7rem;
+			}
+			&-heading {
+				font-size: 3.5rem;
+			}
+		}
+	}
+	.main {
+		.about-us {
+			&__content {
+				&-heading {
+					font-size: 2.3rem;
+				}
+
+				&-text {
+					font-size: 1.9rem;
+				}
+			}
+		}
+
+		.banner {
+			&__content {
+				&-text {
+					font-size: 3.5rem;
+				}
+			}
+		}
+
+		.offer {
+			&__info {
+				font-size: 2rem;
+			}
+
+			&-card {
+				&__heading {
+					font-size: 2.4rem;
+				}
+
+				&__price-tag {
+					font-size: 2.9rem;
+				}
+
+				&__content {
+					&-option {
+						font-size: 1.9rem;
+					}
+				}
+
+				&__button {
+					font-size: 1.9rem;
+
+					&::after {
+						font-size: 1.9rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-height: 450px) {
+	.nav-mobile {
+		&__bg {
+			width: 100%;
+			margin-right: 0;
+		}
+		&__links {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+		}
+		&__link {
+			&:first-child {
+				grid-row: 1 / 2;
+				grid-column: 1 / 7;
+			}
+			&:nth-child(2) {
+				grid-row: 1 / 2;
+				grid-column: 7 / 13;
+			}
+			&:nth-child(3) {
+				grid-row: 2 / 3;
+				grid-column: 1 / 7;
+				align-self: flex-start;
+			}
+			&:last-child {
+				grid-row: 2 / 3;
+				grid-column: 7 / 13;
+				align-self: flex-start;
+			}
+		}
+	}
+}

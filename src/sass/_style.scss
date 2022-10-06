@@ -1,0 +1,566 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'utils' as *;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $main-font;
+}
+
+.nav-mobile {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100%;
+	overflow: hidden;
+	z-index: 7;
+
+	&__bg {
+		position: relative;
+		transform: translateX(-120vw);
+		background-color: $black-95;
+		width: 70vw;
+		height: 100vh;
+		color: $white-100;
+		font-size: 2.7rem;
+		opacity: 0;
+		transition: opacity 0.3s, transform 0.4s;
+		z-index: 12;
+
+		&-stripe {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			top: 0;
+			height: 15vh;
+			min-height: 70px;
+			width: 170%;
+			z-index: 12;
+
+			background: $black-100;
+		}
+
+		&-heading {
+			width: 70vw;
+			font-weight: bold;
+			text-align: center;
+			font-size: 3.7rem;
+		}
+
+		&-blur {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($black-95, 0.8);
+			z-index: 11;
+		}
+	}
+
+	&__links {
+		position: relative;
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 85vh;
+		z-index: 12;
+	}
+
+	&__link {
+		position: relative;
+		display: block;
+		padding: 1em;
+		color: $white-95;
+		text-decoration: none;
+		text-align: center;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 15px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 60%;
+			height: 2px;
+			border-radius: 3px;
+			background-color: $white-100;
+		}
+	}
+}
+
+.nav-desktop {
+	display: none;
+	position: fixed;
+	top: 0;
+	height: 12vh;
+	min-height: 60px;
+	width: 100%;
+	background-color: $white-100;
+	border-bottom: 1px solid $black-95;
+	z-index: 20;
+
+	&__box {
+		display: grid;
+		align-items: center;
+		grid-template-columns: repeat(8, 1fr);
+		height: 100%;
+	}
+
+	&__link,
+	&__heading {
+		color: $black-95;
+		text-decoration: none;
+		font-size: 2rem;
+	}
+
+	&__link {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+
+		&:nth-child(2) {
+			&::after {
+				@include createAfterPseudoElement($black-95, $white-95, 'Home');
+			}
+			&:hover::after {
+				opacity: 1;
+			}
+		}
+
+		&:nth-child(3) {
+			&::after {
+				@include createAfterPseudoElement($black-95, $white-95, 'O nas');
+			}
+			&:hover::after {
+				opacity: 1;
+			}
+		}
+
+		&:nth-child(4) {
+			&::after {
+				@include createAfterPseudoElement($black-95, $white-95, 'Oferta');
+			}
+			&:hover::after {
+				opacity: 1;
+			}
+		}
+
+		&:nth-child(5) {
+			&::after {
+				@include createAfterPseudoElement($black-95, $white-95, 'Kontakt');
+			}
+			&:hover::after {
+				opacity: 1;
+			}
+		}
+
+		&--active {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: $white-60;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity .3s, visibility .3s;
+		}
+	}
+
+	&__heading {
+		grid-row: 1 / 2;
+		grid-column: 1 / 5;
+		padding-inline: 1em;
+		font-size: 3rem;
+		font-weight: bold;
+	}
+}
+
+.header {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+	z-index: 5;
+
+	&__bg,
+	&__shadow,
+	&__content {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__bg {
+		background-image: url('/dist/img/pathway-sm.jpg');
+		background-size: cover;
+		background-position: center;
+		z-index: 5;
+	}
+
+	&__shadow {
+		background-image: linear-gradient(rgba($black-100, 0.65), rgba($black-95, 0.8));
+		z-index: 5;
+	}
+
+	&__content {
+		padding: 2rem;
+		z-index: 10;
+
+		.wrapper {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		&-company-name {
+			color: $white-80;
+			font-size: 2.5rem;
+		}
+
+		&-heading {
+			color: $white-100;
+			font-size: 3.2rem;
+		}
+	}
+}
+
+.main {
+	.about-us {
+		background-color: $white-100;
+		&__content {
+			text-align: center;
+			padding: 1rem;
+			&-heading {
+				font-size: 2rem;
+				margin: 0.8em 0;
+			}
+
+			&-text {
+				font-size: 1.7rem;
+			}
+		}
+
+		&__img {
+			position: relative;
+			width: 100%;
+			height: 40vh;
+			object-fit: cover;
+			object-position: center;
+			align-self: flex-end;
+			border-radius: 7px;
+			box-shadow: 5px 5px 0 0 rgba($black-100, 0.3);
+			z-index: 1;
+		}
+	}
+
+	.banner {
+		position: relative;
+		height: 50vh;
+		background-image: url('../img/adventurer-sm.jpg');
+		background-position: bottom;
+		background-size: cover;
+		z-index: 3;
+
+		&__shadow {
+			@include posAbsoluteCenter;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		&__content {
+			@include posAbsoluteCenter;
+			transform: translate(-50%, -50%);
+			width: 90%;
+			max-width: 1200px;
+			height: 40%;
+			border: 1px solid $white-80;
+			z-index: 5;
+
+			&-text {
+				text-align: center;
+				font-size: 3rem;
+				color: $white-90;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.offer {
+		background-color: $white-100;
+
+		.wrapper {
+			flex-direction: column;
+		}
+
+		&__info {
+			font-size: 1.7rem;
+			text-align: center;
+			margin-bottom: 1.5em;
+		}
+
+		&-card {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			max-width: 370px;
+			padding: 2em 1em;
+			margin-bottom: 4em;
+			color: $black-100;
+			background-color: #fff;
+			box-shadow: 0 4px 7px rgba($black-95, 0.5);
+			border-radius: 8px;
+
+			&__heading {
+				font-weight: normal;
+				font-size: 2.2rem;
+				text-transform: uppercase;
+			}
+
+			&__price-tag {
+				margin: 0.5em;
+				font-size: 2.4rem;
+				font-weight: bold;
+			}
+
+			&__content {
+				display: flex;
+				flex-direction: column;
+				gap: 6px;
+				&-icon {
+					color: $emerald-80;
+				}
+
+				&-option {
+					font-size: 1.7rem;
+					display: flex;
+					gap: 5px;
+
+					&--disabled {
+						color: $black-50;
+					}
+				}
+			}
+
+			&__button {
+				position: relative;
+				margin: 1.8em 1.2em 1.2em;
+				padding: 1em 3em;
+				font-size: 1.7rem;
+				border-radius: 5px;
+				box-shadow: 0 2px 4px rgba($black-95, 0.4);
+				font-weight: bold;
+				text-transform: uppercase;
+				cursor: pointer;
+
+				&::after {
+					@include createAfterPseudoElement($black-95, $white-90, 'WYBIERZ');
+					border-radius: 5px;
+					font-size: 1.7rem;
+					box-shadow: 0 2px 4px rgba($black-95, 0.4);
+					font-weight: bold;
+				}
+
+				&:hover::after {
+					opacity: 1;
+				}
+
+				&--highlight {
+					background-color: $emerald-80;
+					box-shadow: 0 4px 7px rgba($emerald-80, 0.6);
+
+					&::after {
+						background-color: $emerald-dark;
+						color: $white-100;
+						box-shadow: 0 2px 4px rgba($emerald-dark, 0.6);
+					}
+				}
+			}
+		}
+	}
+
+	.contact {
+		&__map {
+			width: 100%;
+			margin: 0 0 3em;
+		}
+		&-form {
+			display: flex;
+			flex-direction: column;
+
+			&__label {
+				margin-bottom: .5em;
+				font-weight: bold;
+				font-size: 1.8rem;
+				color: $black-95;
+				&:nth-of-type(2) {
+					margin-top: 2em;
+				}
+			}
+
+			&__input,
+			&__textarea {
+				padding: 1em;
+				font-family: $main-font;
+				color: $white-90;
+				font-size: 1.7rem;
+				background-color: $black-95;
+				border: 0;
+				border-radius: 10px;
+			}
+
+			&__input:focus,
+			&__textarea:focus {
+				outline: 5px solid $emerald-80;
+			}
+
+			&__textarea {
+				height: 50vh;
+				min-width: 100%;
+				max-width: 100%;
+			}
+
+			&__btn {
+				position: relative;
+				margin: 2rem;
+				padding: 1em 3em;
+				font-size: 1.7rem;
+				border: 0;
+				border-radius: 5px;
+				box-shadow: 0 2px 4px rgba($black-95, 0.4);
+				font-weight: bold;
+				text-align: center;
+				text-transform: uppercase;
+				cursor: pointer;
+
+				&::after {
+					@include createAfterPseudoElement($black-95, $white-90, 'Wyślij!');
+					font-size: 1.7rem;
+					border-radius: 5px;
+					box-shadow: 0 2px 4px rgba($black-95, 0.4);
+					font-weight: bold;
+				}
+
+				
+			}
+		}
+	}
+}
+
+.footer {
+	background-color: $white-80;
+	padding: 3rem 1.5rem;
+	overflow: hidden;
+
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+	}
+
+	&__heading {
+		grid-row: 1 / 2;
+		grid-column: 1 / 13;
+		margin-bottom: 1em;
+		width: 100%;
+		text-align: center;
+		font-size: 3rem;
+		font-weight: bold;
+		color: $black-95;
+	}
+
+	&__box {
+		grid-row: 2 / 3;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2vh;
+		text-align: center;
+
+		&--first {
+			grid-column: 1 / 7;
+		}
+
+		&--second {
+			grid-column: 7 / 13;
+		}
+
+		&--third {
+			margin-top: 3em;
+			grid-row: 3 / 4;
+			grid-column: 1 / 13;
+		}
+
+		&-title {
+			flex-grow: 1;
+			margin-bottom: 0.5em;
+			font-size: 2.2rem;
+			font-weight: bold;
+			color: $black-95;
+		}
+
+		&-link {
+			position: relative;
+			justify-self: flex-end;
+			width: max-content;
+			text-decoration: none;
+			color: $black-50;
+			font-size: 1.6rem;
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 200%;
+				height: 150%;
+				box-shadow: 0 0 5px  rgba($black-50, .5);
+				opacity: 0;
+				transition: opacity .3s
+			}
+
+			&:hover::after {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__line {
+		grid-row: 4 / 5;
+		grid-column: 1 / 13;
+		margin: 4rem auto 3rem;
+		width: 120%;
+		transform: translateX(-10%);
+		height: 1px;
+		background-color: $black-100;
+	}
+
+	&__company {
+		grid-row: 5 / 6;
+		grid-column: 1 / 13;
+
+		&-name {
+			font-size: 1.3rem;
+			text-align: center;
+		}
+	}
+}

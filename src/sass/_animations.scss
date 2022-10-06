@@ -1,0 +1,17 @@
+.burger-inactive {
+	transform: rotate(720deg) skew(20deg) scale(0.1);
+	opacity: 0;
+    visibility: hidden;
+}
+
+body .translate-zero {
+    transform: translate(0);
+}
+
+body .opacity-1 {
+    opacity: 1;
+}
+
+body .visible {
+    visibility: visible;
+}
